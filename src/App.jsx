@@ -120,7 +120,7 @@ function App() {
                   title: e.title,
                   start: DateTime.fromISO(e.start).toISO(),
                   end: e.end ? DateTime.fromISO(e.end).toISO() : undefined,
-                  className: "animate-fade-in rounded-xl h-auto",
+                  className: "animate-fade-in rounded-xl",
                   extendedProps: {
                     originalEvent: e
                   }
@@ -128,11 +128,11 @@ function App() {
                 eventContent={(arg) => {
                   const startTime = arg.event.start ? DateTime.fromJSDate(arg.event.start).toFormat('HH:mm') : '';
                   return (
-                    <div className="flex flex-col min-h-[3rem] h-full p-1.5 relative group">
-                      <div className="flex items-center justify-between gap-1">
+                    <div className="flex flex-col min-h-[3rem] p-1 relative group">
+                      <div className="flex items-center justify-between gap-1 mb-1">
                         <div className="text-xs opacity-80">{startTime}</div>
                         <button
-                          className="material-icons text-[14px] opacity-0 group-hover:opacity-100 cursor-pointer hover:bg-[color:var(--md-sys-color-on-primary)] hover:bg-opacity-10 transition-all rounded-full w-5 h-5 flex items-center justify-center shrink-0"
+                          className="material-icons text-[14px] opacity-0 group-hover:opacity-100 cursor-pointer hover:bg-[color:var(--md-sys-color-on-primary)] hover:bg-opacity-10 transition-all rounded-full w-5 h-5 flex items-center justify-center"
                           onClick={(e) => {
                             e.stopPropagation(); // Prevent event click from triggering
                             if (window.confirm('Are you sure you want to delete this event?')) {
@@ -148,7 +148,7 @@ function App() {
                           delete
                         </button>
                       </div>
-                      <div className="whitespace-normal text-sm leading-tight mt-1 line-clamp-2">{arg.event.title}</div>
+                      <div className="break-words text-sm leading-tight whitespace-normal overflow-hidden">{arg.event.title}</div>
                     </div>
                   )
                 }}
