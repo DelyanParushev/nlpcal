@@ -22,8 +22,8 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
       const data = await parseText(text)
       setPreview(data)
     } catch (err) {
-      console.error(err)
-      setError('Не успях да разбера текста. Опитай да преформулираш.')
+      console.error('Parse error:', err.response?.data || err.message || err)
+      setError(err.response?.data?.error || 'Не успях да разбера текста. Опитай да преформулираш.')
     } finally {
       setLoading(false)
     }

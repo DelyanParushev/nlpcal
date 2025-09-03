@@ -5,16 +5,8 @@ const api = axios.create({
 })
 
 export async function parseText(text) {
-  try {
-    const { data } = await api.post('/api/parse', { text })
-    if (data.error) {
-      throw new Error(data.error)
-    }
-    return data // { title, start, end }
-  } catch (error) {
-    console.error('Parse error:', error)
-    throw new Error('Не успях да разбера текста. Опитай да преформулираш')
-  }
+  const { data } = await api.post('/parse', { text })
+  return data // { title, start, end }
 }
 
 export async function createEvent(payload) {
