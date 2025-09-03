@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Roboto', system-ui, sans-serif;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+  }
+  
+  body {
+    min-height: 100vh;
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+/* Style overrides for FullCalendar */
+.fc {
+  --fc-page-bg-color: transparent !important;
+  --fc-border-color: var(--md-sys-color-outline-variant) !important;
+  --fc-button-text-color: var(--md-sys-color-on-surface) !important;
+  --fc-button-bg-color: var(--md-sys-color-surface-container) !important;
+  --fc-button-border-color: var(--md-sys-color-outline) !important;
+  --fc-button-hover-bg-color: var(--md-sys-color-surface-container-high) !important;
+  --fc-button-hover-border-color: var(--md-sys-color-outline) !important;
+  --fc-button-active-bg-color: var(--md-sys-color-surface-container-highest) !important;
+  --fc-today-bg-color: var(--md-sys-color-primary-container) !important;
+  --fc-neutral-bg-color: var(--md-sys-color-surface-container) !important;
+  font-family: 'Roboto', system-ui, sans-serif !important;
+}
+
+.fc-button {
+  box-shadow: var(--md-shadow-level-1) !important;
+  transition: box-shadow 0.2s ease-in-out !important;
+}
+
+.fc-button:hover {
+  box-shadow: var(--md-shadow-level-2) !important;
+}
+
+.fc-event {
+  box-shadow: var(--md-shadow-level-1) !important;
+}
