@@ -162,13 +162,19 @@ function App() {
                 dayCellClassNames="rounded-lg transition-colors duration-200 bg-[color:var(--md-sys-color-surface-container-highest)] text-[color:var(--md-sys-color-on-surface)] hover:bg-[color:var(--md-sys-color-surface-container-high)]"
                 dayHeaderClassNames="font-medium text-[color:var(--md-sys-color-on-surface-variant)]"
                 viewClassNames="bg-[color:var(--md-sys-color-surface-container-highest)] text-[color:var(--md-sys-color-on-surface)]"
-                buttonClassNames={{
-                  today: "rounded-full px-4 py-2 transition-colors duration-200 bg-[color:var(--md-sys-color-primary)] text-[color:var(--md-sys-color-on-primary)] hover:bg-[color:var(--md-sys-color-primary-container)] hover:text-[color:var(--md-sys-color-on-primary-container)]",
-                  prev: "rounded-full p-2 transition-colors duration-200 bg-[color:var(--md-sys-color-secondary-container)] text-[color:var(--md-sys-color-on-secondary-container)] hover:bg-[color:var(--md-sys-color-secondary)]",
-                  next: "rounded-full p-2 transition-colors duration-200 bg-[color:var(--md-sys-color-secondary-container)] text-[color:var(--md-sys-color-on-secondary-container)] hover:bg-[color:var(--md-sys-color-secondary)]",
-                  dayGridMonth: "rounded-full px-3 py-1.5 transition-colors duration-200 bg-[color:var(--md-sys-color-primary-container)] text-[color:var(--md-sys-color-on-primary-container)] hover:bg-[color:var(--md-sys-color-primary)] hover:text-[color:var(--md-sys-color-on-primary)]",
-                  timeGridWeek: "rounded-full px-3 py-1.5 transition-colors duration-200 bg-[color:var(--md-sys-color-primary-container)] text-[color:var(--md-sys-color-on-primary-container)] hover:bg-[color:var(--md-sys-color-primary)] hover:text-[color:var(--md-sys-color-on-primary)]",
-                  timeGridDay: "rounded-full px-3 py-1.5 transition-colors duration-200 bg-[color:var(--md-sys-color-primary-container)] text-[color:var(--md-sys-color-on-primary-container)] hover:bg-[color:var(--md-sys-color-primary)] hover:text-[color:var(--md-sys-color-on-primary)]"
+                customButtons={{
+                  today: {
+                    text: 'Today',
+                    click: function() {
+                      alert('custom today button clicked');
+                    }
+                  }
+                }}
+                buttonText={{
+                  today: 'Today',
+                  month: 'Month',
+                  week: 'Week',
+                  day: 'Day'
                 }}
               />
             </div>
