@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { DateTime } from 'luxon';
+import bgLocale from '@fullcalendar/core/locales/bg';
 
 export default function Calendar({ events }) {
   return (
@@ -16,6 +17,7 @@ export default function Calendar({ events }) {
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       }}
       firstDay={1}
+      locale={bgLocale}
       events={events.map(e => ({
         title: e.title,
         start: DateTime.fromISO(e.start).toISO(),
