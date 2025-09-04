@@ -15,16 +15,7 @@ export default function Calendar({ events }) {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       }}
-      initialDate={new Date()}
-      firstDay={1}
-      weekends={true}
-      dayHeaderFormat={{ weekday: 'short' }}
-      views={{
-        dayGridMonth: {
-          titleFormat: { month: 'long', year: 'numeric' },
-          showNonCurrentDates: true,
-        }
-      }}
+      firstDay={1} // Start week from Monday
       events={events.map(e => ({
         title: e.title,
         start: DateTime.fromISO(e.start).toISO(),
