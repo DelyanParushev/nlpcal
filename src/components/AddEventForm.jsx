@@ -63,7 +63,7 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
       <form onSubmit={handleParse} className="space-y-6">
         <div className="relative">
           <textarea
-            className="w-full rounded-xl p-6 
+            className="w-full rounded-xl p-3 sm:p-6 
               bg-[color:var(--md-sys-color-surface)] 
               border border-[color:var(--md-sys-color-outline)]
               text-[color:var(--md-sys-color-on-surface)]
@@ -71,8 +71,8 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
               shadow-level-1 transition-all duration-200 
               hover:shadow-level-2 focus:shadow-level-2 
               focus:border-[color:var(--md-sys-color-primary)] outline-none
-              text-[50px] font-['Uni_Sans_Heavy_Italic']"
-            rows={2}
+              text-2xl sm:text-[50px] font-['Uni_Sans_Heavy_Italic']"
+            rows={3}
             placeholder="Въведи естествен текст... (напр. Вечеря с Гери в неделя от 18 до 19:30)"
             value={text}
             onChange={(e) => {
@@ -86,7 +86,7 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
           <button
             type="submit"
             disabled={loading}
-            className={`rounded-full px-6 py-3 font-medium transition-all duration-200 
+            className={`rounded-full px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-medium transition-all duration-200 
               bg-[color:var(--md-sys-color-primary)]
               text-[color:var(--md-sys-color-on-primary)]
               hover:bg-[color:var(--md-sys-color-primary-container)]
@@ -111,7 +111,7 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
             <button
               type="button"
               onClick={handleSave}
-              className={`rounded-full px-6 py-3 font-medium transition-all duration-200 
+              className={`rounded-full px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-medium transition-all duration-200 
                 bg-[color:var(--md-sys-color-tertiary)]
                 text-[color:var(--md-sys-color-on-tertiary)]
                 hover:bg-[color:var(--md-sys-color-tertiary-container)]
