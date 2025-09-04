@@ -15,7 +15,7 @@ export default function Calendar({ events }) {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       }}
-      firstDay={1}
+      firstDay={1} // Start week from Monday
       events={events.map(e => ({
         title: e.title,
         start: DateTime.fromISO(e.start).toISO(),
@@ -25,4 +25,3 @@ export default function Calendar({ events }) {
     />
   );
 }
-

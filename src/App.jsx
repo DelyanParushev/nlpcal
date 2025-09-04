@@ -70,11 +70,11 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-200 ease-in-out ${isDarkMode ? "dark" : ""} bg-[color:var(--md-sys-color-surface)]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <header className="flex justify-between items-center mb-8 relative">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 text-[color:var(--md-sys-color-on-surface-variant)]">
-              <span className="material-icons text-3xl text-[color:var(--md-sys-color-primary)]">calendar_today</span>
-              <h1 className="text-4xl font-medium transition-colors duration-200">NLP Calendar</h1>
+        <header className="flex justify-between items-center mb-6 sm:mb-8 relative">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-3 text-[color:var(--md-sys-color-on-surface-variant)]">
+              <span className="material-icons text-2xl sm:text-3xl text-[color:var(--md-sys-color-primary)]">calendar_today</span>
+              <h1 className="text-2xl sm:text-4xl font-medium transition-colors duration-200">NLP Calendar</h1>
             </div>
           </div>
           <button
@@ -90,13 +90,13 @@ function App() {
 
         <div className="space-y-8">
           <div className="overflow-hidden rounded-3xl shadow-level-2 bg-[color:var(--md-sys-color-surface-container)] border border-[color:var(--md-sys-color-outline)] transition-all duration-200 hover:shadow-level-4">
-            <div className="p-8">
+            <div className="p-4 sm:p-8">
               <AddEventForm onSaved={fetchEvents} />
             </div>
           </div>
 
           <div className="overflow-hidden rounded-3xl shadow-level-2 bg-[color:var(--md-sys-color-surface-container)] border border-[color:var(--md-sys-color-outline)] transition-all duration-200 hover:shadow-level-4">
-            <div className="p-8">
+            <div className="p-2 sm:p-8">
               <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 initialView="dayGridMonth"
@@ -162,13 +162,19 @@ function App() {
                 dayCellClassNames="rounded-lg transition-colors duration-200 bg-[color:var(--md-sys-color-surface-container-highest)] text-[color:var(--md-sys-color-on-surface)] hover:bg-[color:var(--md-sys-color-surface-container-high)]"
                 dayHeaderClassNames="font-medium text-[color:var(--md-sys-color-on-surface-variant)]"
                 viewClassNames="bg-[color:var(--md-sys-color-surface-container-highest)] text-[color:var(--md-sys-color-on-surface)]"
-                buttonClassNames={{
-                  today: "rounded-full px-4 py-2 transition-colors duration-200 bg-[color:var(--md-sys-color-primary)] text-[color:var(--md-sys-color-on-primary)] hover:bg-[color:var(--md-sys-color-primary-container)] hover:text-[color:var(--md-sys-color-on-primary-container)]",
-                  prev: "rounded-full p-2 transition-colors duration-200 bg-[color:var(--md-sys-color-secondary-container)] text-[color:var(--md-sys-color-on-secondary-container)] hover:bg-[color:var(--md-sys-color-secondary)]",
-                  next: "rounded-full p-2 transition-colors duration-200 bg-[color:var(--md-sys-color-secondary-container)] text-[color:var(--md-sys-color-on-secondary-container)] hover:bg-[color:var(--md-sys-color-secondary)]",
-                  dayGridMonth: "rounded-full px-3 py-1.5 transition-colors duration-200 bg-[color:var(--md-sys-color-primary-container)] text-[color:var(--md-sys-color-on-primary-container)] hover:bg-[color:var(--md-sys-color-primary)] hover:text-[color:var(--md-sys-color-on-primary)]",
-                  timeGridWeek: "rounded-full px-3 py-1.5 transition-colors duration-200 bg-[color:var(--md-sys-color-primary-container)] text-[color:var(--md-sys-color-on-primary-container)] hover:bg-[color:var(--md-sys-color-primary)] hover:text-[color:var(--md-sys-color-on-primary)]",
-                  timeGridDay: "rounded-full px-3 py-1.5 transition-colors duration-200 bg-[color:var(--md-sys-color-primary-container)] text-[color:var(--md-sys-color-on-primary-container)] hover:bg-[color:var(--md-sys-color-primary)] hover:text-[color:var(--md-sys-color-on-primary)]"
+                customButtons={{
+                  today: {
+                    text: 'Today',
+                    click: function() {
+                      alert('custom today button clicked');
+                    }
+                  }
+                }}
+                buttonText={{
+                  today: 'Today',
+                  month: 'Month',
+                  week: 'Week',
+                  day: 'Day'
                 }}
               />
             </div>
