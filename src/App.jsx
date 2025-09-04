@@ -70,11 +70,11 @@ function App() {
   return (
     <div className={`min-h-screen transition-colors duration-200 ease-in-out ${isDarkMode ? "dark" : ""} bg-[color:var(--md-sys-color-surface)]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <header className="flex justify-between items-center mb-8 relative">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 text-[color:var(--md-sys-color-on-surface-variant)]">
-              <span className="material-icons text-3xl text-[color:var(--md-sys-color-primary)]">calendar_today</span>
-              <h1 className="text-4xl font-medium transition-colors duration-200">NLP Calendar</h1>
+        <header className="flex justify-between items-center mb-6 sm:mb-8 relative">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-3 text-[color:var(--md-sys-color-on-surface-variant)]">
+              <span className="material-icons text-2xl sm:text-3xl text-[color:var(--md-sys-color-primary)]">calendar_today</span>
+              <h1 className="text-2xl sm:text-4xl font-medium transition-colors duration-200">NLP Calendar</h1>
             </div>
           </div>
           <button
@@ -90,13 +90,13 @@ function App() {
 
         <div className="space-y-8">
           <div className="overflow-hidden rounded-3xl shadow-level-2 bg-[color:var(--md-sys-color-surface-container)] border border-[color:var(--md-sys-color-outline)] transition-all duration-200 hover:shadow-level-4">
-            <div className="p-8">
+            <div className="p-4 sm:p-8">
               <AddEventForm onSaved={fetchEvents} />
             </div>
           </div>
 
           <div className="overflow-hidden rounded-3xl shadow-level-2 bg-[color:var(--md-sys-color-surface-container)] border border-[color:var(--md-sys-color-outline)] transition-all duration-200 hover:shadow-level-4">
-            <div className="p-8">
+            <div className="p-2 sm:p-8">
               <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 initialView="dayGridMonth"
