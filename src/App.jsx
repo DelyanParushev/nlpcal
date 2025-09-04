@@ -10,6 +10,7 @@ import "@material-design-icons/font";
 import "./App.css";
 import { deleteEvent } from "./services/api";
 import "./fonts.css";
+import "./theme.css";
 import "./calendar.css";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
