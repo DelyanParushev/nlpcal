@@ -15,6 +15,7 @@ export default function Calendar({ events }) {
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       }}
+      firstDay={1}
       events={events.map(e => ({
         title: e.title,
         start: DateTime.fromISO(e.start).toISO(),
