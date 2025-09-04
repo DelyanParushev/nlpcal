@@ -162,7 +162,12 @@
 }
 
 .dark .fc .fc-day-today {
-  background-color: var(--md-sys-color-surface-container-high) !important;
+  background-color: var(--md-sys-color-primary-container) !important;
+}
+
+.dark .fc .fc-day-today .fc-daygrid-day-number {
+  color: var(--md-sys-color-on-primary-container) !important;
+  font-weight: 500 !important;
 }
 
 .dark .fc .fc-col-header-cell {
