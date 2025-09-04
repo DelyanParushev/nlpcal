@@ -71,8 +71,8 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
               shadow-level-1 transition-all duration-200 
               hover:shadow-level-2 focus:shadow-level-2 
               focus:border-[color:var(--md-sys-color-primary)] outline-none
-              text-2xl sm:text-[50px] font-['Uni_Sans_Heavy_Italic']"
-            rows={3}
+              text-2xl sm:text-[40px] font-['Uni Sans Heavy Italic']"
+            rows={2}
             placeholder="Въведи естествен текст... (напр. Вечеря с Гери в неделя от 18 до 19:30)"
             value={text}
             onChange={(e) => {

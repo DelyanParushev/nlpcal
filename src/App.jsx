@@ -7,10 +7,10 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { DateTime } from "luxon";
 import AddEventForm from "./components/AddEventForm";
 import "@material-design-icons/font";
-import "./App.css";
-import { deleteEvent } from "./services/api";
 import "./fonts.css";
 import "./calendar.css";
+import "./App.css";
+import { deleteEvent } from "./services/api";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 
@@ -26,19 +26,13 @@ function App() {
     const initialDarkMode = savedTheme === 'dark' || (savedTheme === null && prefersDark);
     
     setIsDarkMode(initialDarkMode);
-    if (initialDarkMode) {
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.classList.toggle('dark', initialDarkMode);
 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e) => {
       if (localStorage.getItem('theme') === null) {
         setIsDarkMode(e.matches);
-        if (e.matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.toggle('dark', e.matches);
       }
     };
     
@@ -58,17 +52,12 @@ function App() {
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
     setIsDarkMode(newDarkMode);
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    document.documentElement.classList.toggle('dark', newDarkMode);
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-200 ease-in-out ${isDarkMode ? "dark" : ""} bg-[color:var(--md-sys-color-surface)]`}>
+    <div className="min-h-screen transition-colors duration-200 ease-in-out bg-[color:var(--md-sys-color-surface)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <header className="flex justify-between items-center mb-6 sm:mb-8 relative">
           <div className="flex items-center gap-2 sm:gap-4">
@@ -162,14 +151,6 @@ function App() {
                 dayCellClassNames="rounded-lg transition-colors duration-200 bg-[color:var(--md-sys-color-surface-container-highest)] text-[color:var(--md-sys-color-on-surface)] hover:bg-[color:var(--md-sys-color-surface-container-high)]"
                 dayHeaderClassNames="font-medium text-[color:var(--md-sys-color-on-surface-variant)]"
                 viewClassNames="bg-[color:var(--md-sys-color-surface-container-highest)] text-[color:var(--md-sys-color-on-surface)]"
-                customButtons={{
-                  today: {
-                    text: 'Today',
-                    click: function() {
-                      alert('custom today button clicked');
-                    }
-                  }
-                }}
                 buttonText={{
                   today: 'Today',
                   month: 'Month',

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Uni Sans Heavy Italic';
+  src: url('./assets/fonts/Uni Sans Heavy Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

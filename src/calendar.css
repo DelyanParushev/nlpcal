@@ -1,0 +1,176 @@
+/* Base button styles for all FullCalendar buttons */
+.fc .fc-button {
+  height: 40px !important;
+  padding: 0 24px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 20px !important;
+  border: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: var(--md-shadow-level-1) !important;
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  box-shadow: var(--md-shadow-level-2) !important;
+}
+
+.fc .fc-button:active {
+  background-color: var(--md-sys-color-surface-container) !important;
+}
+
+/* Today button */
+.fc .fc-today-button {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+.fc .fc-today-button:hover {
+  background-color: var(--md-sys-color-primary-container) !important;
+  color: var(--md-sys-color-on-primary-container) !important;
+}
+
+.fc .fc-today-button:disabled {
+  background-color: var(--md-sys-color-surface-container) !important;
+  color: var(--md-sys-color-on-surface) !important;
+  opacity: 0.38 !important;
+}
+
+/* Previous/Next buttons */
+.fc .fc-prev-button,
+.fc .fc-next-button {
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Active state for view buttons */
+.fc .fc-button-active {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+  box-shadow: var(--md-shadow-level-2) !important;
+}
+
+/* Calendar header and navigation */
+.fc .fc-toolbar {
+  gap: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+/* Calendar grid styling */
+.fc .fc-daygrid-day {
+  background-color: var(--md-sys-color-surface-container) !important;
+  border-color: var(--md-sys-color-outline-variant) !important;
+}
+
+.fc .fc-day-today {
+  background-color: var(--md-sys-color-primary-container) !important;
+}
+
+.fc .fc-col-header-cell {
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+  padding: 8px !important;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: var(--md-sys-color-on-surface) !important;
+  font-weight: 500 !important;
+  padding: 8px !important;
+}
+
+/* Event styling */
+.fc-event {
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: var(--md-shadow-level-1) !important;
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+.fc-event-title {
+  font-weight: 500 !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+  .fc .fc-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+  }
+
+  .fc .fc-toolbar-chunk {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .fc .fc-button {
+    padding: 0 16px !important;
+    height: 36px !important;
+    font-size: 0.875rem !important;
+  }
+
+  .fc .fc-prev-button,
+  .fc .fc-next-button {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+/* Dark mode specific overrides */
+.dark .fc .fc-button {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+.dark .fc .fc-button:hover {
+  background-color: var(--md-sys-color-surface-container-highest) !important;
+}
+
+.dark .fc .fc-button-active {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+.dark .fc .fc-today-button {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+}
+
+.dark .fc .fc-daygrid-day {
+  background-color: var(--md-sys-color-surface-container) !important;
+}
+
+.dark .fc .fc-day-today {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+}
+
+.dark .fc .fc-col-header-cell {
+  background-color: var(--md-sys-color-surface-container-high) !important;
+}
+
+.dark .fc-event {
+  background-color: var(--md-sys-color-primary) !important;
+  color: var(--md-sys-color-on-primary) !important;
+  box-shadow: var(--md-shadow-level-2) !important;
+}
