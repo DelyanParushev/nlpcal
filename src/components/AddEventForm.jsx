@@ -104,7 +104,7 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
                 Мисля…
               </span>
             ) : (
-              'Парсни'
+              'Анализирай'
             )}
           </button>
           {preview && (
@@ -174,4 +174,5 @@ export default function AddEventForm({ onSaved, isDarkMode }) {
       )}
     </div>
   )
+
 }
